@@ -15,9 +15,9 @@ const service = {
     logger.debug(`Doing search/tweets for ${q} with limit ${chalk.bgBlackBright(count)}`);
     return client.get('search/tweets', {
       q,
-      count
+      count,
     });
-  }
+  },
 };
 
 module.exports = service;

@@ -7,15 +7,15 @@ const _ = require('lodash');
 
 const getTweetsForThisRepo = async (repo, count) => {
   const repoTitle = `${chalk.bgBlackBright(repo.name)} by ${chalk.bgBlackBright(repo.owner.login)}`;
-  twitterService.searchTweets(repo.url, count)
-    .then((tweets) => {
-      if (_.isEmpty(tweets.statuses)) {
-        logger.info(`\tNobody talks about ${repoTitle}`);
-      } else {
-        logger.info(`\tWho is talking about ${repoTitle}`);
-        tweets.statuses.forEach(tweet => logger.info(tweet));
-      }
-    });
+  logger.debug(repo);
+  const tweets = await twitterService.searchTweets(repo.url, count);
+  if (_.isEmpty(tweets.statuses)) {
+    logger.info(`\tNobody talks about ${repoTitle}`);
+  } else {
+    logger.info(`\tTalking about ${repoTitle}:`);
+    logger.debug(tweets);
+    tweets.statuses.forEach(tweet => logger.info(`\t\t${tweet}`));
+  }
 };
 
 const getTweetsForRepos = async (topic, countRepos, countTweets) => {

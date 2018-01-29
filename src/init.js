@@ -4,9 +4,7 @@ const logger = require('./logger');
 const DEFAULT_REPO_COUNT = 10;
 const DEFAULT_TWEET_COUNT = 10;
 
-const sanitizeCount = (preferredCount, defaultCount) => {
-  return preferredCount > 0 && preferredCount <= defaultCount ? preferredCount : defaultCount;
-};
+const sanitizeCount = (preferred, def) => ((preferred > 0 && preferred <= def) ? preferred : def);
 
 const init = (args) => {
   if (_.isEmpty(args) || !_.isArray(args)) {
