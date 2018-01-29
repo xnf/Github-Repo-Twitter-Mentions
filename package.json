@@ -1,0 +1,31 @@
+{
+  "name": "football-tweets",
+  "version": "1.0.0",
+  "description": "Football Tweets. You know why...",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node --autotest spec"
+  },
+  "engines": {
+    "node": ">=7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xnf/football-tweets.git"
+  },
+  "author": "Edgars Zagorskis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xnf/football-tweets/issues"
+  },
+  "homepage": "https://github.com/xnf/football-tweets#readme",
+  "dependencies": {
+    "jasmine-node": "^1.14.5",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "nock": "^9.1.6"
+  }
+}
