@@ -19,4 +19,15 @@ describe('Init', () => {
         .toBe(10);
     });
   });
+
+  describe('topic', () => {
+    it('should return count as 10 when it is undefined', () => {
+      expect(init(['foo']).topic)
+        .toBe('foo');
+    });
+    xit('should exit with usage info when topic is not passed', () => {
+      expect(init(['foo']).topic)
+        .toBe('foo');
+    });
+  });
 });
