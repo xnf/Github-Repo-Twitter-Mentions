@@ -1,5 +1,7 @@
 const nock = require('nock');
-const service = require('../src/github.service');
+const service = require('../src/twitter.service');
+
+const env = Object.assign({}, process.env);
 
 describe('GitHub Service', () => {
   beforeEach(() => {
@@ -9,6 +11,9 @@ describe('GitHub Service', () => {
     nock('https://api.github.com')
       .get('/search/repositories?q=topic:foo&per_page=3')
       .reply(200, { items: new Array(3).fill(null) });
+  });
+  afterEach(() => {
+    process.env = env;
   });
   it('Should return 10 items by default from the github api', async () => {
     const response = await service.findReposByTopic('foo');
