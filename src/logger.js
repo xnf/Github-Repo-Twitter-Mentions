@@ -30,7 +30,7 @@ module.exports = new (winston.Logger)({
             level = chalk.blue(level);
             break;
           case 'ERROR':
-            level = chalk.red(level);
+            level = chalk.bgRed.black(level);
             break;
           default:
             break;

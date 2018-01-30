@@ -35,7 +35,7 @@ const fetchToken = async (consumerKey, consumerSecret) => {
   } else {
     try {
       const accessToken = await fetchToken(consumerKey, consumerSecret);
-      logger.info(`Your bearer token is ${accessToken}`);
+      logger.warn(`Add this to the .env file\nTWITTER_BEARER_TOKEN=${accessToken}`);
     } catch (e) {
       logger.error(e);
     }
