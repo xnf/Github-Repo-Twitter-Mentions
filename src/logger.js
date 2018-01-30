@@ -22,21 +22,16 @@ module.exports = new (winston.Logger)({
 
         switch (level) {
           case 'INFO':
-            level = chalk.cyan(level);
-            break;
-
+            return message;
           case 'WARN':
             level = chalk.yellow(level);
             break;
-
           case 'DEBUG':
             level = chalk.blue(level);
             break;
-
           case 'ERROR':
             level = chalk.red(level);
             break;
-
           default:
             break;
         }

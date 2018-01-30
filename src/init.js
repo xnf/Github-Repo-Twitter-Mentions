@@ -17,6 +17,7 @@ const init = (args) => {
   const topic = String(args[0]);
   const preferredRepoCount = parseInt(args[1], 10);
   const preferredTweetCount = parseInt(args[2], 10);
+  logger.info(`Looking for ${preferredRepoCount} repos and ${preferredTweetCount} tweets on topic '${topic}'`);
   return {
     topic,
     countRepos: sanitizeCount(preferredRepoCount, DEFAULT_REPO_COUNT),

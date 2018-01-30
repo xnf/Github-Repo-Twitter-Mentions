@@ -39,8 +39,11 @@ Create a .env file in the root directory of your project. Add environment-specif
 ## Testing
 Tests are run by jasmine from the `./spec` folder.
 
+Tests with watcher do not exit for they are watching changes in src and spec folders and re-running once files change.
+
 ```bash
 npm test
+npm run test:watch
 ```
 
 ## Linting

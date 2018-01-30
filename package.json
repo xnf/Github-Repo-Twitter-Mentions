@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "auth": "node find-bearer.js",
-    "test": "jasmine-node --autotest --watch ./src --color --verbose spec",
+    "test": "jasmine-node --color --verbose spec",
+    "test:watch": "jasmine-node --autotest --watch ./src --color --verbose spec",
     "lint": "eslint '**/*.js'"
   },
   "engines": {
@@ -31,6 +32,7 @@
     "lodash": "^4.17.4",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
+    "string-collapse-white-space": "^3.2.7",
     "twitter": "^1.7.1",
     "winston": "^2.4.0"
   },
